@@ -34,5 +34,5 @@ class Board:
         plt.show()
 
 # Example usage
-board = Board(size=10)
-board.animate_board(frames=50, interval=20)  # Adjust frames and interval as needed
+# board = Board(size=10)
+# board.animate_board(frames=50, interval=20)  # Adjust frames and interval as needed
