@@ -1,3 +1,4 @@
+ 
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -32,7 +33,10 @@ class Board:
         self.init_board_display()
         self.anim = FuncAnimation(self.fig, self.update_board_display, frames=frames, interval=interval, blit=True)
         plt.show()
-
-# Example usage
+    
+    def showBoard(self):
+        plt.show()
+        
+        
 # board = Board(size=10)
 # board.animate_board(frames=50, interval=20)  # Adjust frames and interval as needed
