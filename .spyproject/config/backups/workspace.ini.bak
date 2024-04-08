@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['primes.py', 'drawgrid.py', 'sin_curve.py', 'test_primes.py', 'CallDrawGrid.py']
+recent_files = ['untitled1.py', 'primes.py', 'drawgrid.py', 'sin_curve.py', 'test_primes.py', 'CallDrawGrid.py', 'AmberOriginalRandomWalkForQuantumMechanics.py', 'untitled3.py', 'Draw1dSpace.py', 'untitled6.py', 'CalculateResults.py']
 
 [main]
 version = 0.2.0
