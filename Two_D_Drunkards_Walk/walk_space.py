@@ -29,10 +29,11 @@ class two_d_space:
             case _:
                 print("illegal direction -" , direction)
                 return ("error",direction)
-         
+            
+        print(self.current_position)
         if self.moves >= self.max_moves:
-            return ( True, self.current_position)
+            return ( True, self.moves)
         
-        return (False,self.current_position )      
+        return (False,self.moves )      
                
                 
