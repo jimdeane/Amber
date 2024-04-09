@@ -54,7 +54,6 @@ def test_random_walk_where_walker_is_arrested():
         simulation = walker.move_drunkard(
             10, test_random_generator.next
         )  # test 40 moves
-        print(i, simulation)
     df.loc[i] = [i, simulation[1], simulation[0]]  # Adding a new row at the end
     print(df)
     # should not survive
