@@ -5,8 +5,6 @@ Created on Sun Apr  7 15:58:37 2024
 @author: jim
 """
 import numpy as np
-import sys
-import random
 class two_d_space_walker:
     def __init__(self, size, max_moves):
         self.size = ( size)
