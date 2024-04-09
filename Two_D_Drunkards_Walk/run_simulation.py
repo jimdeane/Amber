@@ -4,42 +4,35 @@ Created on Mon Apr  8 13:43:14 2024
 
 @author: jim
 """
-from walk_space import two_d_space
-from scipy.stats import linregress
+
+from production_random import production_random
+from walk_space import two_d_space_walker
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import random
-import sys
+from scipy.stats import linregress
 
-iterations = 100
-steps = 40
-random.seed(10)
+
+iterations = 1000
+steps = 400
+
 survivors = np.zeros(steps + 1)
 
 # create the data frame for the results
-df = pd.DataFrame(columns=['Index','Hit', 'Alive'])
-walkspace = two_d_space(11,400)
-
-for i in range(iterations):  
-    for j in range(steps):
-        direction = random.choice(["left","right"])
-        # print(direction)
-        result = walkspace.move_drunkard(direction)
-        # print(result)
-        if result[0] == "error":
-            sys.exit()
-        if result[0] == True: # True means run out of moves
-            df.loc[i] = [i, 0, True]
-        else:
-            df.loc[i] = [i, j, False]
+df = pd.DataFrame(columns=['Index','Moves', 'Arrested'])
+for i in range(iterations): # trying just one simulation
+        walker = two_d_space_walker(11,steps) # 11 means j=5` 400 is the number of steps to survive to be counted`
+        simulation = walker.move_drunkard(steps, production_random) # test 40 moves
+        print(i, simulation)
+df.loc[i] = [i,simulation[1],simulation[0]]  # Adding a new row at the end
+print(df)
 
 for index, row in df.iterrows():
-    print(index, row)
-    if row['Alive']:  # If survived till the end
-        survivors += 1  # Increment survivor count for all steps
+    if row['Arrested']:  # If survived till the end
+        survivors[:int(row['Moves'])] += 1
     else:  # If arrested, increment survivor count up to the 'hit at' step
-        survivors[:int(row['Hit'])] += 1
+        
+        survivors += 1  # Increment survivor count for all steps
 
 # Calculate the number of survivors after each step
 k_values = np.cumsum(survivors[::-1])[::-1]
