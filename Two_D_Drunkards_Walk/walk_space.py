@@ -42,6 +42,12 @@ class two_d_space_walker:
                                    # walker ahd not been arrested  
                
     def is_arrested(self, position):
+        if a randomn arrest event has occured at poisiton
+            return True
+        else:
+            return False
+        
+        
         if self.min_position < position < self.max_position:
             return False
         else:
