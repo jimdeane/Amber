@@ -4,6 +4,7 @@ Created on Sun Apr  7 15:58:37 2024
 
 @author: jim
 """
+import random
 import numpy as np
 class two_d_space_walker:
     def __init__(self, size, max_moves):
@@ -42,13 +43,13 @@ class two_d_space_walker:
                                    # walker ahd not been arrested  
                
     def is_arrested(self, position):
-        if a randomn arrest event has occured at poisiton
+        if self.check_event_occurrence():
             return True
-        else:
-            return False
-        
-        
         if self.min_position < position < self.max_position:
             return False
         else:
             return True
+        
+    def check_event_occurrence(self):
+    # Check for the 1% probability event
+        return random.randint(0, 99) == 0
