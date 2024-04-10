@@ -2,7 +2,7 @@ import random
 
 
 class TestRandomGenerator:
-    def __init__(self, initial_seed=42):
+    def __init__(self, initial_seed=42): 
         self.seed = initial_seed
 
     def next(self):
